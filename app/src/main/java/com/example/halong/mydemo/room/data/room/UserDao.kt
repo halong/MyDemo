@@ -12,6 +12,10 @@ interface UserDao {
     @Query("select * from user")
     fun getUsers(): LiveData<List<User>>
 
+    @Query("select * from user")
+    fun getUser():List<User>
+
+
     @Insert(onConflict = OnConflictStrategy.REPLACE) //插入时如果PrimaryKey相同则替换
     fun insert(user: User)
 

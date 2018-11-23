@@ -13,14 +13,12 @@ abstract class MyDatabase : RoomDatabase() {
     companion object {
         @Volatile private var INSTANCE: MyDatabase? = null
 
-        // 单例
         fun getInstance(context: Context) =
             INSTANCE ?: synchronized(this) {
                 INSTANCE
                     ?: buildDatabase(context).also { INSTANCE = it }
             }
 
-        // 新建数据库
         private fun buildDatabase(context: Context) =
             Room.databaseBuilder(context.applicationContext,
                 MyDatabase::class.java, "Sample.db")

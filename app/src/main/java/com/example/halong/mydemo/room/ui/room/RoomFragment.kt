@@ -46,18 +46,22 @@ class RoomFragment : Fragment() {
         }
 
         button2.setOnClickListener {
-            val user=viewModel.getUser(14)
-            if (user != null) {
-                viewModel.removeUser(user)
-            }
+//            val user=viewModel.getUser(14)
+//            if (user != null) {
+//                viewModel.removeUser(user)
+//            }
+
+            viewModel.removeAllUsers()
         }
 
         button3.setOnClickListener {
-            val user=viewModel.getUser(5)
-            if (user != null) {
-                user.name="uuuuuuuuuuuuuuuuuu"
-                viewModel.updateUser(user)
-            }
+//            val user=viewModel.getUser(5)
+//            if (user != null) {
+//                user.name="uuuuuuuuuuuuuuuuuu"
+//                viewModel.updateUser(user)
+//            }
+
+            viewModel.updateAllUsers()
 
         }
 

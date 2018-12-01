@@ -28,14 +28,10 @@ class RetrofitFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewModel = ViewModelProviders.of(this).get(RetrofitViewModel::class.java)
-        // TODO: Use the ViewModel
 
         viewModel.text.observe(this, Observer {
-            if (it != null) {
-                text.text=it    //数据控制视图
-            }
+                text.text=it   //数据控制视图
         })
-
 
         button1.setOnClickListener {
             viewModel.getHTMLString();//事件改变数据

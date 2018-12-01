@@ -31,36 +31,25 @@ class RoomFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(RoomViewModel::class.java)
 
+        //model control ui
         viewModel.getUsers().observe(this, Observer {
-            if (it != null) {
-                message.text=it.toString()
-            }
+                message.text=it!!.toString()
         })
 
 
+        // events control model
         button1.setOnClickListener {
-            val user = User()
+            val user = User()  //data class 里面的参数全赋值就会自动生成一个无参构造方法
             user.name="dadadadad"
             user.age=100
             viewModel.addUser(user)
         }
 
         button2.setOnClickListener {
-//            val user=viewModel.getUser(14)
-//            if (user != null) {
-//                viewModel.removeUser(user)
-//            }
-
             viewModel.removeAllUsers()
         }
 
         button3.setOnClickListener {
-//            val user=viewModel.getUser(5)
-//            if (user != null) {
-//                user.name="uuuuuuuuuuuuuuuuuu"
-//                viewModel.updateUser(user)
-//            }
-
             viewModel.updateAllUsers()
 
         }

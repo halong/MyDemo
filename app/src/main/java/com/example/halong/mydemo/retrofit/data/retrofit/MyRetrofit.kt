@@ -2,9 +2,7 @@ package com.example.halong.mydemo.retrofit.data.retrofit
 
 import retrofit2.Retrofit
 
-class MyRetrofit {
-    private constructor()
-
+class MyRetrofit private constructor(){
     companion object {
         private var Instance:MyRetrofit?=null
         fun getInstance():MyRetrofit= Instance?:MyRetrofit().also { Instance=it }

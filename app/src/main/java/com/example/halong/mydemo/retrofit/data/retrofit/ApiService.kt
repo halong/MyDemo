@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("/")
-    fun getHTMLString():Call<ResponseBody>
+    @GET("/")   //参数不能为空
+    fun getHTMLString():Call<ResponseBody>  //注意返回值
 }

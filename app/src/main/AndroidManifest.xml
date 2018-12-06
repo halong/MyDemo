@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+            android:name=".MyApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -25,6 +26,21 @@
         <activity android:name=".dagger2.TestActivity">
         </activity>
         <activity android:name=".databinding.DataBindingDemoActivity">
+        </activity>
+        <activity android:name=".dbflow.DbflowActivity">
+        </activity>
+
+        <service
+                android:name=".MyService"
+                android:enabled="true"
+                android:exported="true">
+        </service>
+
+        <activity android:name=".recyclerview.RecyclerViewActivity">
+        </activity>
+        <activity android:name=".kolley.KolleyActivity">
+        </activity>
+        <activity android:name=".litepal.LitepalActivity">
         </activity>
     </application>
 
